@@ -27,6 +27,7 @@ jobs:
 
     - name: Without tests
       run: ./_build/Command
+      
     - name: Run CMake
       run: cmake -H. -B_build -DBUILD_TESTS=ON
 
