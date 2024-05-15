@@ -26,4 +26,4 @@ jobs:
       run: cmake --build _build
 
     - name: Without tests
-      run: ./_build/command
+      run: ./_build/Command
