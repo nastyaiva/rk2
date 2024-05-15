@@ -3,7 +3,7 @@
 #include <sstream>
 #include "./../Command.cpp"
 // Include the header files for the classes you want to test
-#include "command.hpp"
+#include "Command.hpp"
 
 // Test fixture for Receiver class
 class ReceiverTest : public ::testing::Test {
