@@ -26,10 +26,9 @@ public:
 // Test case to check if the receiver performs the action correctly
 TEST(CommandPatternTest, ReceiverAction) {
   Receiver receiver;
-  
-  testing::internal::CaptureStdout();
+  StdoutCapture capture;
   receiver.action();
-  std::string output = testing::internal::GetCapturedStdout();
+  std::string output = capture.getOutput();
 
   ASSERT_EQ(output, "Receiver: execute action\n");
 }
@@ -38,12 +37,11 @@ TEST(CommandPatternTest, ReceiverAction) {
 TEST(CommandPatternTest, CommandExecute) {
   Receiver *receiver = new Receiver();
   ConcreteCommand command(receiver);
-
+  StdoutCapture capture;
   command.execute();
-  std::string output = testing::internal::GetCapturedStdout();
-
-  ASSERT_EQ(output, "Receiver: execute action\n");
+  std::string output = capture.getOutput();
   delete receiver;
+  ASSERT_EQ(output, "Receiver: execute action\n");
 }
 
 // Test case to check if the invoker confirms the command action
@@ -52,13 +50,12 @@ TEST(CommandPatternTest, InvokerConfirm) {
   ConcreteCommand command(receiver);
   Invoker invoker;
   invoker.set(&command);
-
+  StdoutCapture capture;
   invoker.confirm();
-  std::string output = testing::internal::GetCapturedStdout();
-
-
-  ASSERT_EQ(output, "Receiver: execute action\n");
+  std::string output = capture.getOutput();
   delete receiver;
+  ASSERT_EQ(output, "Receiver: execute action\n");
+  
 }
 
 
