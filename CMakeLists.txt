@@ -5,9 +5,6 @@ project(MyCommand)
 # Добавить исполняемый файл для abstract_factory.cpp
 add_executable(Command Command.cpp)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 if(BUILD_TESTS)
   enable_testing()
   add_subdirectory(third-party/gtest)
