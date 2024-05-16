@@ -30,6 +30,7 @@ TEST(CommandPatternTest, ReceiverAction) {
   receiver.action();
   std::string output = capture.getOutput();
 
+
   ASSERT_EQ(output, "Receiver: execute action\n");
 }
 
@@ -40,7 +41,7 @@ TEST(CommandPatternTest, CommandExecute) {
   StdoutCapture capture;
   command.execute();
   std::string output = capture.getOutput();
-  delete receiver;
+
   ASSERT_EQ(output, "Receiver: execute action\n");
 }
 
@@ -53,9 +54,8 @@ TEST(CommandPatternTest, InvokerConfirm) {
   StdoutCapture capture;
   invoker.confirm();
   std::string output = capture.getOutput();
-  delete receiver;
+
   ASSERT_EQ(output, "Receiver: execute action\n");
-  
 }
 
 
