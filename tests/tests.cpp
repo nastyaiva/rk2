@@ -12,7 +12,6 @@ TEST(CommandPatternTest, ReceiverAction) {
   std::string output = testing::internal::GetCapturedStdout();
 
   ASSERT_EQ(output, "Receiver: execute action\n");
-  delete receiver;
 }
 
 // Test case to check if the concrete command executes correctly
