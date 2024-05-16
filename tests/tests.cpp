@@ -2,8 +2,6 @@
 #include <iostream>
 #include <sstream>
 #include "./../Command.cpp"
-#include <gtest/gtest.h>
-#include "CommandPattern.h"
 
 // Test case to check if the receiver performs the action correctly
 TEST(CommandPatternTest, ReceiverAction) {
