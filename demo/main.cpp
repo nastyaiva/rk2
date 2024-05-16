@@ -1,4 +1,4 @@
-include "../Command.cpp"
+#include "../Command.cpp"
 int main()
 {
   ConcreteCommand command( new Receiver() );
