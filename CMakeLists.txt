@@ -12,7 +12,7 @@ add_library(State STATIC ${CMAKE_CURRENT_SOURCE_DIR}/Command.cpp)
 
 if(BUILD_COMMAND_APP)
     add_executable(Command1 main.cpp)
-    target_link_libraries(Command1 State)
+    target_link_libraries(Command1 Command)
 endif()
 
 if(BUILD_TESTS)
@@ -27,5 +27,6 @@ endif()
 add_executable(demo ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp)
 target_link_libraries(demo Command)
 install(TARGETS demo RUNTIME DESTINATION bin)
+
 
 include(CPackConfig.cmake)
