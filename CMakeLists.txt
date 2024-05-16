@@ -5,7 +5,7 @@ project(Command)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(BUILD_COMMAND_APP "Build State1" OFF)
+option(BUILD_COMMAND_APP "Build Command1" OFF)
 option(BUILD_TESTS "Build tests" OFF)
 
 add_library(State STATIC ${CMAKE_CURRENT_SOURCE_DIR}/Command.cpp)
