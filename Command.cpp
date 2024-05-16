@@ -94,15 +94,3 @@ private:
   Command *command;
   // ...
 };
-
-
-int main()
-{
-  ConcreteCommand command( new Receiver() );
-  
-  Invoker invoker;
-  invoker.set( &command );
-  invoker.confirm();
-  
-  return 0;
-}
