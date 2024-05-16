@@ -19,7 +19,6 @@ TEST(CommandPatternTest, CommandExecute) {
   Receiver *receiver = new Receiver();
   ConcreteCommand command(receiver);
   
-  testing::internal::CaptureStdout();
   command.execute();
   std::string output = testing::internal::GetCapturedStdout();
 
@@ -34,7 +33,6 @@ TEST(CommandPatternTest, InvokerConfirm) {
   Invoker invoker;
   invoker.set(&command);
   
-  testing::internal::CaptureStdout();
   invoker.confirm();
   std::string output = testing::internal::GetCapturedStdout();
 
