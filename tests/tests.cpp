@@ -44,7 +44,3 @@ TEST(CommandPatternTest, InvokerConfirm) {
 }
 
 
-  ASSERT_EQ(output, "Receiver: execute action\n");
-  delete receiver;
-}
-
