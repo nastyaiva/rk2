@@ -38,6 +38,12 @@ TEST(CommandPatternTest, InvokerConfirm) {
   invoker.confirm();
   std::string output = testing::internal::GetCapturedStdout();
 
+
+  ASSERT_EQ(output, "Receiver: execute action\n");
+  delete receiver;
+}
+
+
   ASSERT_EQ(output, "Receiver: execute action\n");
   delete receiver;
 }
