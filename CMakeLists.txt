@@ -27,6 +27,7 @@ endif()
 add_executable(demo ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp)
 target_link_libraries(demo Command)
 install(TARGETS demo RUNTIME DESTINATION bin)
+target_link_libraries(demo ${CMAKE_CURRENT_BINARY_DIR}/libCommand.a)
 
 
 include(CPackConfig.cmake)
