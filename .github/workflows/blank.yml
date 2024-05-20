@@ -40,13 +40,13 @@ jobs:
         cmake --build _build --config Release
         cpack -G DEB --config _build/CPackConfig.cmake
         cpack -G RPM --config _build/CPackConfig.cmake
-        shell: bash
+      shell: bash
     - name: Build and package on macOS
       if: matrix.os == 'macos-latest'
       run: |
         cmake --build _build --config Release
         cpack -G DragNDrop --config _build/CPackConfig.cmake
-        shell: bash
+      shell: bash
     - name: Upload Release Assets
       uses: actions/upload-artifact@v3
       with:
